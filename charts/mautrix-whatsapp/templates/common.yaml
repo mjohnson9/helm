@@ -1,0 +1,17 @@
+{{/* Make sure all variables are set properly */}}
+{{- include "common.values.setup" . }}
+
+{{/* Append the configMap volume to the volumes */}}
+{{- define "mautrix-whatsapp.settingsVolume" -}}
+enabled: "true"
+mountPath: "/data/config.yaml"
+subPath: "config.yaml"
+type: "custom"
+volumeSpec:
+  configMap:
+    name: {{ include "common.names.fullname" . }}-configuration
+{{- end -}}
+{{- $_ := set .Values.persistence "mautrix-whatsapp-config" (include "mautrix-whatsapp.settingsVolume" . | fromYaml) -}}
+
+{{/* Render the templates */}}
+{{ include "common.all" . }}
