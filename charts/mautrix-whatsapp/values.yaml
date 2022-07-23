@@ -35,6 +35,9 @@ persistence:
         #   enabled: false
         mountPath: /data
 
+# You must set this to a random string. It's recommended to use mautrix-whatsapp to generate it.
+senderLocalPart:
+
 config:
     # Homeserver details.
     homeserver:
