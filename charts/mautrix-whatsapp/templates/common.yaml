@@ -8,8 +8,8 @@ mountPath: "/data/config.yaml"
 subPath: "config.yaml"
 type: "custom"
 volumeSpec:
-  configMap:
-    name: {{ include "common.names.fullname" . }}-configuration
+  secret:
+    secretName: {{ template "common.names.fullname" . }}-rendered-config
 {{- end -}}
 {{- $_ := set .Values.persistence "mautrix-whatsapp-config" (include "mautrix-whatsapp.settingsVolume" . | fromYaml) -}}
 
