@@ -7,6 +7,33 @@ entries:
           description: Initial version
     apiVersion: v2
     appVersion: v0.6.0
+    created: "2022-07-23T23:02:00.180144115Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.4.2
+    description: A Matrix-WhatsApp puppeting bridge based on whatsmeow.
+    digest: 1b600a6fa10ab61a8b02845b0a2e06e3dc14cfc7ccf7646653619a48e486979c
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/stable/mautrix-whatsapp
+    icon: https://maunium.net/favicon.ico
+    keywords:
+    - mautrix-whatsapp
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - name: Mike Johnson
+      url: https://github.com/mjohnson9
+    name: mautrix-whatsapp
+    sources:
+    - https://github.com/mautrix/whatsapp
+    urls:
+    - https://github.com/mjohnson9/helm/releases/download/mautrix-whatsapp-1.1.10/mautrix-whatsapp-1.1.10.tgz
+    version: 1.1.10
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
+          description: Initial version
+    apiVersion: v2
+    appVersion: v0.6.0
     created: "2022-07-23T22:54:17.995717644Z"
     dependencies:
     - name: common
@@ -217,4 +244,4 @@ entries:
     urls:
     - https://github.com/mjohnson9/helm/releases/download/mautrix-whatsapp-1.1.2/mautrix-whatsapp-1.1.2.tgz
     version: 1.1.2
-generated: "2022-07-23T22:54:17.995940347Z"
+generated: "2022-07-23T23:02:00.180181116Z"
