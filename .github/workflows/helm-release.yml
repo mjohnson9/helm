@@ -34,13 +34,13 @@ jobs:
       - name: Run chart-testing (list-changed)
         id: list-changed
         run: |
-          changed=$(ct list-changed --target-branch ${{ github.event.repository.default_branch }})
+          changed=$(ct list-changed --target-branch "${{ github.event.repository.default_branch }}" --since "${{ github.event.before }}")
           if [[ -n "$changed" ]]; then
             echo "::set-output name=changed::true"
           fi
 
       - name: Run chart-testing (lint)
-        run: ct lint --target-branch ${{ github.event.repository.default_branch }}
+        run: ct lint --target-branch "${{ github.event.repository.default_branch }}" --since "${{ github.event.before }}"
 
       - name: Create kind cluster
         uses: helm/kind-action@v1.2.0
@@ -48,6 +48,7 @@ jobs:
 
       - name: Run chart-testing (install)
         run: ct install
+        if: steps.list-changed.outputs.changed == 'true'
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.4.0
