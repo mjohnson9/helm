@@ -7,7 +7,7 @@
 
 image:
   # -- image repository
-  repository: dock.mau.dev/mautrix/whatsapp
+  repository: dock.mau.dev/mautrix/discord
   # -- image tag
   # @default -- chart.appVersion
   tag:
@@ -32,7 +32,7 @@ service:
 # @default -- See values.yaml
 persistence:
   data:
-    #   enabled: false
+    # enabled: false
     mountPath: /data
 
 # You must set this to a random string. It's recommended to use mautrix-whatsapp to generate it.
