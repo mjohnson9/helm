@@ -11,8 +11,7 @@ icon: https://maunium.net/favicon.ico
 sources:
   - https://github.com/mautrix/discord
 maintainers:
-  - name: Mike Johnson
-    url: https://github.com/mjohnson9
+  - name: mjohnson9
 dependencies:
   - name: common
     repository: https://library-charts.k8s-at-home.com
