@@ -7,6 +7,33 @@ entries:
           description: Initial version
     apiVersion: v2
     appVersion: a9b9ca72d77bc1f3ec32119cb135d36b297e60a2-amd64
+    created: "2022-07-24T03:14:04.942321769Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.4.2
+    description: A Matrix-Discord puppeting bridge based on discordgo.
+    digest: 1c415c2400ea6ad1f3753a7f296db57b6090178fed1cf919a88d9595336a75dd
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/stable/mautrix-discord
+    icon: https://maunium.net/favicon.ico
+    keywords:
+    - mautrix-whatsapp
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - name: Mike Johnson
+      url: https://github.com/mjohnson9
+    name: mautrix-discord
+    sources:
+    - https://github.com/mautrix/discord
+    urls:
+    - https://github.com/mjohnson9/helm/releases/download/mautrix-discord-1.1.3/mautrix-discord-1.1.3.tgz
+    version: 1.1.3
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
+          description: Initial version
+    apiVersion: v2
+    appVersion: a9b9ca72d77bc1f3ec32119cb135d36b297e60a2-amd64
     created: "2022-07-24T03:08:47.064313655Z"
     dependencies:
     - name: common
@@ -299,4 +326,4 @@ entries:
     urls:
     - https://github.com/mjohnson9/helm/releases/download/mautrix-whatsapp-1.1.2/mautrix-whatsapp-1.1.2.tgz
     version: 1.1.2
-generated: "2022-07-24T03:08:47.064348255Z"
+generated: "2022-07-24T03:14:04.942632476Z"
