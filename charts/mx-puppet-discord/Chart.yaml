@@ -1,0 +1,26 @@
+apiVersion: v2
+appVersion: v0.1.1
+description: This is a discord puppeting bridge for matrix. It handles bridging private and group DMs, as well as Guilds (servers).
+name: mx-puppet-discord
+version: 1.2.0
+kubeVersion: ">=1.16.0-0"
+keywords:
+  - mx-puppet-discord
+  - matrix
+  - matrix-org
+  - discord
+  - puppet
+  - double puppeting
+home: https://github.com/mjohnson9/helm/tree/main/charts/mx-puppet-discord
+sources:
+  - https://gitlab.com/mx-puppet/discord/mx-puppet-discord
+maintainers:
+  - name: mjohnson9
+dependencies:
+  - name: common
+    repository: https://library-charts.k8s-at-home.com
+    version: 4.4.2
+annotations:
+  artifacthub.io/changes: |
+    - kind: added
+      description: Initial version
