@@ -412,6 +412,37 @@ entries:
           description: Initial version
     apiVersion: v2
     appVersion: v0.1.1
+    created: "2022-07-30T04:34:35.716354774Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.4.2
+    description: This is a discord puppeting bridge for matrix. It handles bridging
+      private and group DMs, as well as Guilds (servers).
+    digest: d3cc4c98fca604742a6ecceb9cbe3987f7d68c2ef4802fae56aea5fbd71f2f68
+    home: https://github.com/mjohnson9/helm/tree/main/charts/mx-puppet-discord
+    keywords:
+    - mx-puppet-discord
+    - matrix
+    - matrix-org
+    - discord
+    - puppet
+    - double puppeting
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - name: mjohnson9
+    name: mx-puppet-discord
+    sources:
+    - https://gitlab.com/mx-puppet/discord/mx-puppet-discord
+    urls:
+    - https://github.com/mjohnson9/helm/releases/download/mx-puppet-discord-1.2.1/mx-puppet-discord-1.2.1.tgz
+    version: 1.2.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
+          description: Initial version
+    apiVersion: v2
+    appVersion: v0.1.1
     created: "2022-07-30T04:20:46.997470253Z"
     dependencies:
     - name: common
@@ -437,4 +468,4 @@ entries:
     urls:
     - https://github.com/mjohnson9/helm/releases/download/mx-puppet-discord-1.2.0/mx-puppet-discord-1.2.0.tgz
     version: 1.2.0
-generated: "2022-07-30T04:20:46.997738356Z"
+generated: "2022-07-30T04:34:35.716405474Z"
