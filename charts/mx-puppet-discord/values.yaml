@@ -7,7 +7,7 @@
 
 image:
   # -- image repository
-  repository: registry.gitlab.com/mx-puppet/discord/mx-puppet-discord
+  repository: registry.johnson.computer/mx-puppet-discord
   # -- image tag
   # @default -- chart.appVersion
   tag:
