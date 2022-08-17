@@ -115,6 +115,32 @@ entries:
           description: Initial version
     apiVersion: v2
     appVersion: v0.6.1
+    created: "2022-08-17T21:13:05.604703505Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.4.2
+    description: A Matrix-WhatsApp puppeting bridge based on whatsmeow.
+    digest: e6af994d620f6240d79a395f1220ac0f4ef503b4f2e99c4ecc858806e1482722
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/stable/mautrix-whatsapp
+    icon: https://maunium.net/favicon.ico
+    keywords:
+    - mautrix-whatsapp
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - name: mjohnson9
+    name: mautrix-whatsapp
+    sources:
+    - https://github.com/mautrix/whatsapp
+    urls:
+    - https://github.com/mjohnson9/helm/releases/download/mautrix-whatsapp-22.08.17/mautrix-whatsapp-22.08.17.tgz
+    version: 22.08.17
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
+          description: Initial version
+    apiVersion: v2
+    appVersion: v0.6.1
     created: "2022-08-17T16:21:26.982096029Z"
     dependencies:
     - name: common
@@ -458,6 +484,37 @@ entries:
     - https://github.com/mjohnson9/helm/releases/download/mautrix-whatsapp-1.1.2/mautrix-whatsapp-1.1.2.tgz
     version: 1.1.2
   mx-puppet-discord:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
+          description: Initial version
+    apiVersion: v2
+    appVersion: 2022.08.25
+    created: "2022-08-17T21:13:05.741069497Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.4.2
+    description: This is a discord puppeting bridge for matrix. It handles bridging
+      private and group DMs, as well as Guilds (servers).
+    digest: 91c31a3bc03fa556441313afcb848bab5554ad9ac999cb47e2efe269eb8d8279
+    home: https://github.com/mjohnson9/helm/tree/main/charts/mx-puppet-discord
+    keywords:
+    - mx-puppet-discord
+    - matrix
+    - matrix-org
+    - discord
+    - puppet
+    - double puppeting
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - name: mjohnson9
+    name: mx-puppet-discord
+    sources:
+    - https://gitlab.com/mx-puppet/discord/mx-puppet-discord
+    urls:
+    - https://github.com/mjohnson9/helm/releases/download/mx-puppet-discord-22.08.17/mx-puppet-discord-22.08.17.tgz
+    version: 22.08.17
   - annotations:
       artifacthub.io/changes: |
         - kind: added
@@ -830,4 +887,4 @@ entries:
     urls:
     - https://github.com/mjohnson9/helm/releases/download/mx-puppet-discord-1.2.0/mx-puppet-discord-1.2.0.tgz
     version: 1.2.0
-generated: "2022-08-17T21:09:22.192740427Z"
+generated: "2022-08-17T21:13:05.741209701Z"
