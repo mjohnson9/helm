@@ -1,8 +1,8 @@
 apiVersion: v2
-appVersion: v0.6.0
+appVersion: v0.6.1
 description: A Matrix-WhatsApp puppeting bridge based on whatsmeow.
 name: mautrix-whatsapp
-version: 1.2.1
+version: 1.2.2
 kubeVersion: ">=1.16.0-0"
 keywords:
   - mautrix-whatsapp
