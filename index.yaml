@@ -6,6 +6,32 @@ entries:
         - kind: added
           description: Initial version
     apiVersion: v2
+    appVersion: 92c5407359e18500d3090cbca460781e86c88726-amd64
+    created: "2022-08-26T01:29:45.364494179Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.4.2
+    description: A Matrix-Discord puppeting bridge based on discordgo.
+    digest: 630c4c5032bc5330d9967a1c7fdbe4af6808bb789bb7103960351e275b7441ca
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/stable/mautrix-discord
+    icon: https://maunium.net/favicon.ico
+    keywords:
+    - mautrix-discord
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - name: mjohnson9
+    name: mautrix-discord
+    sources:
+    - https://github.com/mautrix/discord
+    urls:
+    - https://github.com/mjohnson9/helm/releases/download/mautrix-discord-22.08.26/mautrix-discord-22.08.26.tgz
+    version: 22.08.26
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
+          description: Initial version
+    apiVersion: v2
     appVersion: a9b9ca72d77bc1f3ec32119cb135d36b297e60a2-amd64
     created: "2022-08-26T01:15:49.314246032Z"
     dependencies:
@@ -970,4 +996,4 @@ entries:
     urls:
     - https://github.com/mjohnson9/helm/releases/download/mx-puppet-discord-1.2.0/mx-puppet-discord-1.2.0.tgz
     version: 1.2.0
-generated: "2022-08-26T01:15:49.314502636Z"
+generated: "2022-08-26T01:29:45.364796893Z"
