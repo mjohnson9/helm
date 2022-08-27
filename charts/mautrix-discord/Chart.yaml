@@ -2,7 +2,7 @@ apiVersion: v2
 appVersion: 92c5407359e18500d3090cbca460781e86c88726-amd64
 description: A Matrix-Discord puppeting bridge based on discordgo.
 name: mautrix-discord
-version: 22.08.27
+version: 22.08.28
 kubeVersion: ">=1.16.0-0"
 keywords:
   - mautrix-discord
