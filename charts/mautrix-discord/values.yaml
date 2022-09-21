@@ -46,8 +46,9 @@ config:
     # The domain of the homeserver (for MXIDs, etc).
     domain: example.com
 
-    # Is the homeserver actually mautrix-asmux?
-    asmux: false
+    # What software is the homeserver running?
+    # Standard Matrix homeservers like Synapse, Dendrite and Conduit should just use "standard" here.
+    software: standard
     # The URL to push real-time bridge status to.
     # If set, the bridge will make POST requests to this URL whenever a user's discord connection state changes.
     # The bridge will use the appservice as_token to authorize requests.
@@ -195,6 +196,8 @@ config:
       # Default to encryption, force-enable encryption in all portals the bridge creates
       # This will cause the bridge bot to be in private chats for the encryption to work properly.
       default: false
+      # Whether to use MSC2409/MSC3202 instead of /sync long polling for receiving encryption-related data.
+      appservice: false
       # Require encryption, drop any unencrypted messages.
       require: false
       # Enable key sharing? If enabled, key requests for rooms where users are in will be fulfilled.
