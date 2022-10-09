@@ -1,111 +1,109 @@
-# mautrix-whatsapp
+# mautrix-discord
 
-![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![AppVersion: 1.0.0](https://img.shields.io/badge/AppVersion-1.0.0-informational?style=flat-square)
+![Version: 22.10.08](https://img.shields.io/badge/Version-22.10.08-informational?style=flat-square) ![AppVersion: 6be531685f308f081675034904d89c9e920be996-amd64](https://img.shields.io/badge/AppVersion-6be531685f308f081675034904d89c9e920be996--amd64-informational?style=flat-square)
 
-mautrix-whatsapp helm package
+A Matrix-Discord puppeting bridge based on discordgo.
 
-**This chart is not maintained by the upstream project and any issues with the chart should be raised [here](https://github.com/k8s-at-home/charts/issues/new/choose)**
+**Homepage:** <https://github.com/mjohnson9/helm/tree/main/charts/mautrix-discord>
+
+## Maintainers
+
+| Name | Email | Url |
+| ---- | ------ | --- |
+| mjohnson9 |  |  |
 
 ## Source Code
 
-* <https://github.com/mautrix-whatsapp/mautrix-whatsapp-docker>
+* <https://github.com/mautrix/discord>
 
 ## Requirements
 
 Kubernetes: `>=1.16.0-0`
 
-## Dependencies
-
 | Repository | Name | Version |
 |------------|------|---------|
-| https://library-charts.k8s-at-home.com | common | 4.0.0 |
-
-## TL;DR
-
-```console
-helm repo add k8s-at-home https://k8s-at-home.com/charts/
-helm repo update
-helm install mautrix-whatsapp k8s-at-home/mautrix-whatsapp
-```
-
-## Installing the Chart
-
-To install the chart with the release name `mautrix-whatsapp`
-
-```console
-helm install mautrix-whatsapp k8s-at-home/mautrix-whatsapp
-```
-
-## Uninstalling the Chart
-
-To uninstall the `mautrix-whatsapp` deployment
-
-```console
-helm uninstall mautrix-whatsapp
-```
-
-The command removes all the Kubernetes components associated with the chart **including persistent volumes** and deletes the release.
-
-## Configuration
-
-Read through the [values.yaml](./values.yaml) file. It has several commented out suggested values.
-Other values may be used from the [values.yaml](https://github.com/k8s-at-home/library-charts/tree/main/charts/stable/common/values.yaml) from the [common library](https://github.com/k8s-at-home/library-charts/tree/main/charts/stable/common).
-
-Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`.
-
-```console
-helm install mautrix-whatsapp \
-  --set env.TZ="America/New York" \
-    k8s-at-home/mautrix-whatsapp
-```
-
-Alternatively, a YAML file that specifies the values for the above parameters can be provided while installing the chart.
-
-```console
-helm install mautrix-whatsapp k8s-at-home/mautrix-whatsapp -f values.yaml
-```
-
-## Custom configuration
-
-N/A
+| https://library-charts.k8s-at-home.com | common | 4.4.2 |
 
 ## Values
 
-**Important**: When deploying an application Helm chart you can add more values from our common library chart [here](https://github.com/k8s-at-home/library-charts/tree/main/charts/stable/common)
-
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| config.appservice.address | string | `"http://localhost:29334"` |  |
+| config.appservice.as_token | string | `"This value is generated when generating the registration"` |  |
+| config.appservice.bot.avatar | string | `"mxc://maunium.net/nIdEykemnwdisvHbpxflpDlC"` |  |
+| config.appservice.bot.displayname | string | `"Discord bridge bot"` |  |
+| config.appservice.bot.username | string | `"discordbot"` |  |
+| config.appservice.database.max_conn_idle_time | string | `nil` |  |
+| config.appservice.database.max_conn_lifetime | string | `nil` |  |
+| config.appservice.database.max_idle_conns | int | `2` |  |
+| config.appservice.database.max_open_conns | int | `20` |  |
+| config.appservice.database.type | string | `"postgres"` |  |
+| config.appservice.database.uri | string | `"postgres://user:password@host/database?sslmode=disable"` |  |
+| config.appservice.ephemeral_events | bool | `true` |  |
+| config.appservice.hostname | string | `"0.0.0.0"` |  |
+| config.appservice.hs_token | string | `"This value is generated when generating the registration"` |  |
+| config.appservice.id | string | `"discord"` |  |
+| config.appservice.port | int | `29334` |  |
+| config.bridge.channel_name_template | string | `"{{if or (eq .Type 3) (eq .Type 4)}}{{.Name}}{{else}}#{{.Name}}{{end}}"` |  |
+| config.bridge.command_prefix | string | `"!discord"` |  |
+| config.bridge.delete_portal_on_channel_delete | bool | `false` |  |
+| config.bridge.delivery_receipts | bool | `false` |  |
+| config.bridge.displayname_template | string | `"{{.Username}}#{{.Discriminator}}{{if .Bot}} (bot){{end}}"` |  |
+| config.bridge.double_puppet_allow_discovery | bool | `false` |  |
+| config.bridge.double_puppet_server_map | object | `{}` |  |
+| config.bridge.encryption.allow | bool | `false` |  |
+| config.bridge.encryption.allow_key_sharing | bool | `false` |  |
+| config.bridge.encryption.appservice | bool | `false` |  |
+| config.bridge.encryption.default | bool | `false` |  |
+| config.bridge.encryption.require | bool | `false` |  |
+| config.bridge.encryption.rotation.enable_custom | bool | `false` |  |
+| config.bridge.encryption.rotation.messages | int | `100` |  |
+| config.bridge.encryption.rotation.milliseconds | int | `604800000` |  |
+| config.bridge.encryption.verification_levels.receive | string | `"unverified"` |  |
+| config.bridge.encryption.verification_levels.send | string | `"unverified"` |  |
+| config.bridge.encryption.verification_levels.share | string | `"cross-signed-tofu"` |  |
+| config.bridge.federate_rooms | bool | `true` |  |
+| config.bridge.guild_name_template | string | `"{{.Name}}"` |  |
+| config.bridge.login_shared_secret_map | object | `{}` |  |
+| config.bridge.management_room_text.additional_help | string | `""` |  |
+| config.bridge.management_room_text.welcome | string | `"Hello, I'm a Discord bridge bot."` |  |
+| config.bridge.management_room_text.welcome_connected | string | `"Use `help` for help."` |  |
+| config.bridge.management_room_text.welcome_unconnected | string | `"Use `help` for help or `login` to log in."` |  |
+| config.bridge.message_error_notices | bool | `true` |  |
+| config.bridge.message_status_events | bool | `false` |  |
+| config.bridge.permissions | object | `{}` |  |
+| config.bridge.portal_message_buffer | int | `128` |  |
+| config.bridge.private_chat_portal_meta | bool | `false` |  |
+| config.bridge.provisioning.prefix | string | `"/_matrix/provision"` |  |
+| config.bridge.provisioning.shared_secret | string | `"generate"` |  |
+| config.bridge.resend_bridge_info | bool | `false` |  |
+| config.bridge.restricted_rooms | bool | `true` |  |
+| config.bridge.startup_private_channel_create_limit | int | `5` |  |
+| config.bridge.sync_direct_chat_list | bool | `false` |  |
+| config.bridge.username_template | string | `"discord_{{.}}"` |  |
+| config.homeserver.address | string | `"http://localhost:8008"` |  |
+| config.homeserver.async_media | bool | `false` |  |
+| config.homeserver.domain | string | `"example.com"` |  |
+| config.homeserver.message_send_checkpoint_endpoint | string | `nil` |  |
+| config.homeserver.software | string | `"standard"` |  |
+| config.homeserver.status_endpoint | string | `nil` |  |
+| config.logging.directory | string | `"./logs"` |  |
+| config.logging.file_date_format | string | `"2006-01-02"` |  |
+| config.logging.file_json | bool | `false` |  |
+| config.logging.file_mode | int | `384` |  |
+| config.logging.file_name_format | string | `"{{.Date}}-{{.Index}}.log"` |  |
+| config.logging.print_json | bool | `false` |  |
+| config.logging.print_level | string | `"debug"` |  |
+| config.logging.timestamp_format | string | `"Jan _2, 2006 15:04:05"` |  |
 | env | object | See below | environment variables. See more environment variables in the [mautrix-whatsapp documentation](https://mautrix-whatsapp.org/docs). |
 | env.TZ | string | `"UTC"` | Set the container timezone |
 | image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
-| image.repository | string | `"mautrix-whatsapp/mautrix-whatsapp"` | image repository |
+| image.repository | string | `"dock.mau.dev/mautrix/discord"` | image repository |
 | image.tag | string | chart.appVersion | image tag |
-| ingress.main | object | See values.yaml | Enable and configure ingress settings for the chart under this key. |
 | persistence | object | See values.yaml | Configure persistence settings for the chart under this key. |
+| senderLocalPart | string | `"discordbot"` |  |
 | service | object | See values.yaml | Configures service settings for the chart. |
-
-## Changelog
-
-### Version 1.0.0
-
-#### Added
-
-- Initial version
-
-#### Changed
-
-N/A
-
-#### Fixed
-
-N/A
-
-## Support
-
-- See the [Docs](https://docs.k8s-at-home.com/our-helm-charts/getting-started/)
-- Open an [issue](https://github.com/k8s-at-home/charts/issues/new/choose)
-- Ask a [question](https://github.com/k8s-at-home/organization/discussions)
-- Join our [Discord](https://discord.gg/sTMX7Vh) community
+| useExternalSecrets | bool | `false` | Whether or not to use ExternalSecrets |
 
 ----------------------------------------------
-Autogenerated from chart metadata using [helm-docs v1.5.0](https://github.com/norwoodj/helm-docs/releases/v1.5.0)
+Autogenerated from chart metadata using [helm-docs v1.11.0](https://github.com/norwoodj/helm-docs/releases/v1.11.0)

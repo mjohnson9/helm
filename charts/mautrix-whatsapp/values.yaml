@@ -36,7 +36,10 @@ persistence:
     mountPath: /data
 
 # You must set this to a random string. It's recommended to use mautrix-whatsapp to generate it.
-senderLocalPart:
+senderLocalPart: whatsappbot
+
+# -- Whether or not to use ExternalSecrets
+useExternalSecrets: false
 
 config:
   # Homeserver details.

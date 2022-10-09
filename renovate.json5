@@ -34,6 +34,26 @@
             ],
             "depNameTemplate": "dock.mau.dev/mautrix/whatsapp",
             "datasourceTemplate": "docker"
+        },
+        {
+            "description": "Update _VERSION variables in shell scripts",
+            "fileMatch": [
+                "\\.sh$"
+            ],
+            "matchStrings": [
+                "# renovate: datasource=(?<datasource>[a-z-]+?) depName=(?<depName>.+?)(?: (?:packageName|lookupName)=(?<packageName>.+?))?(?: versioning=(?<versioning>[a-z-]+?))?\\s[A-Z_]+?_VERSION=(?<currentValue>.+?)\\s"
+            ],
+            "versioningTemplate": "{{#if versioning}}{{versioning}}{{else}}semver{{/if}}"
+        },
+        {
+            "description": "Update `version:` and `_VERSION:` variables in github workflows",
+            "fileMatch": [
+                "^\\.github\\/workflows\\/[^/]+\\.ya?ml$"
+            ],
+            "matchStrings": [
+                "\\s+version: (?<currentValue>.+?) # renovate: datasource=(?<datasource>.+?) depName=(?<depName>.+?)(?: (?:packageName|lookupName)=(?<packageName>.+?))?(?: versioning=(?<versioning>.+?))?\\s",
+                "\\s*[A-Z_]+?_VERSION: (?<currentValue>.+?) # renovate: datasource=(?<datasource>.+?) depName=(?<depName>.+?)(?: (?:packageName|lookupName)=(?<packageName>.+?))?(?: versioning=(?<versioning>.+?))?\\s"
+            ]
         }
     ],
     "packageRules": [

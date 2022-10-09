@@ -2,11 +2,11 @@ apiVersion: v2
 appVersion: 'v0.7.0'
 description: A Matrix-WhatsApp puppeting bridge based on whatsmeow.
 name: mautrix-whatsapp
-version: '22.09.23'
+version: '22.10.08'
 kubeVersion: ">=1.16.0-0"
 keywords:
   - mautrix-whatsapp
-home: https://github.com/k8s-at-home/charts/tree/master/charts/stable/mautrix-whatsapp
+home: https://github.com/mjohnson9/helm/tree/main/charts/mautrix-whatsapp
 icon: https://maunium.net/favicon.ico
 sources:
   - https://github.com/mautrix/whatsapp
