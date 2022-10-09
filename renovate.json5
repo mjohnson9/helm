@@ -1,0 +1,40 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+        "config:base",
+        ":gitSignOff"
+    ],
+    "hostRules": [
+        {
+            "matchHost": "api.github.com",
+            "concurrentRequestLimit": 1
+        }
+    ],
+    "regexManagers": [
+        {
+            "description": "Update mautrix-whatsapp docker image references",
+            "fileMatch": [
+                "^charts\\/mautrix-whatsapp\\/Chart\\.yaml$"
+            ],
+            "matchStrings": [
+                "appVersion: '(?<currentValue>.*?)'\\s+",
+                "version: '(?<currentValue>.*?)'\\s+"
+            ],
+            "depNameTemplate": "dock.mau.dev/mautrix/whatsapp",
+            "datasourceTemplate": "docker"
+        },
+    },
+    "packageRules": [
+        {
+            "matchPackagePatterns": [
+                "*"
+            ],
+            "matchUpdateTypes": [
+                "minor",
+                "patch"
+            ],
+            "groupName": "all non-major dependencies",
+            "groupSlug": "all-minor-patch"
+        }
+    ]
+}
