@@ -22,8 +22,8 @@
             ],
             "depNameTemplate": "dock.mau.dev/mautrix/whatsapp",
             "datasourceTemplate": "docker"
-        },
-    },
+        }
+    ],
     "packageRules": [
         {
             "matchPackagePatterns": [
