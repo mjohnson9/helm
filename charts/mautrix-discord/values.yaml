@@ -38,6 +38,9 @@ persistence:
 # You must set this to a random string. It's recommended to use mautrix-whatsapp to generate it.
 senderLocalPart: discordbot
 
+#-- Whether or not to use ExternalSecrets
+useExternalSecrets: false
+
 config:
   # Homeserver details.
   homeserver:
