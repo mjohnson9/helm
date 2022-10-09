@@ -12,6 +12,18 @@
     ],
     "regexManagers": [
         {
+            "description": "Update mautrix-discord docker image references",
+            "fileMatch": [
+                "^charts\\/mautrix-discord\\/Chart\\.yaml$"
+            ],
+            "matchStrings": [
+                "appVersion: '(?<currentValue>.*?)'\\s+",
+                "version: '(?<currentValue>.*?)'\\s+"
+            ],
+            "depNameTemplate": "dock.mau.dev/mautrix/discord",
+            "datasourceTemplate": "docker"
+        },
+        {
             "description": "Update mautrix-whatsapp docker image references",
             "fileMatch": [
                 "^charts\\/mautrix-whatsapp\\/Chart\\.yaml$"
