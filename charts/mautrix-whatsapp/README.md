@@ -160,7 +160,7 @@ Kubernetes: `>=1.16.0-0`
 | image.repository | string | `"dock.mau.dev/mautrix/whatsapp"` | image repository |
 | image.tag | string | chart.appVersion | image tag |
 | persistence | object | See values.yaml | Configure persistence settings for the chart under this key. |
-| senderLocalPart | string | `nil` |  |
+| senderLocalPart | string | `"whatsappbot"` |  |
 | service | object | See values.yaml | Configures service settings for the chart. |
 
 ----------------------------------------------

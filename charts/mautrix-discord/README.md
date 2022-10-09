@@ -101,7 +101,7 @@ Kubernetes: `>=1.16.0-0`
 | image.repository | string | `"dock.mau.dev/mautrix/discord"` | image repository |
 | image.tag | string | chart.appVersion | image tag |
 | persistence | object | See values.yaml | Configure persistence settings for the chart under this key. |
-| senderLocalPart | string | `nil` |  |
+| senderLocalPart | string | `"discordbot"` |  |
 | service | object | See values.yaml | Configures service settings for the chart. |
 
 ----------------------------------------------
