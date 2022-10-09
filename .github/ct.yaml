@@ -1,0 +1,4 @@
+helm-extra-args: --timeout 600s
+debug: true
+chart-repos: library-charts=https://library-charts.k8s-at-home.com
+target-branch: main
