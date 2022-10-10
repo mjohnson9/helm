@@ -1,6 +1,6 @@
 # mautrix-discord
 
-![Version: 0.1.0-1](https://img.shields.io/badge/Version-0.1.0--1-informational?style=flat-square) ![AppVersion: 6be531685f308f081675034904d89c9e920be996-amd64](https://img.shields.io/badge/AppVersion-6be531685f308f081675034904d89c9e920be996--amd64-informational?style=flat-square)
+![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![AppVersion: 6be531685f308f081675034904d89c9e920be996-amd64](https://img.shields.io/badge/AppVersion-6be531685f308f081675034904d89c9e920be996--amd64-informational?style=flat-square)
 
 A Matrix-Discord puppeting bridge based on discordgo.
 
