@@ -451,6 +451,32 @@ entries:
     urls:
     - https://github.com/mjohnson9/helm/releases/download/mautrix-discord-1.1.2/mautrix-discord-1.1.2.tgz
     version: 1.1.2
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
+          description: Initial version
+    apiVersion: v2
+    appVersion: 6be531685f308f081675034904d89c9e920be996-amd64
+    created: "2022-10-10T17:24:54.164419379Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.4.2
+    description: A Matrix-Discord puppeting bridge based on discordgo.
+    digest: a65b8f423816dda6f1cfaffae306e87d72d2958db5a9f3334bdc1ee8480f40c1
+    home: https://github.com/mjohnson9/helm/tree/main/charts/mautrix-discord
+    icon: https://maunium.net/favicon.ico
+    keywords:
+    - mautrix-discord
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - name: mjohnson9
+    name: mautrix-discord
+    sources:
+    - https://github.com/mautrix/discord
+    urls:
+    - https://github.com/mjohnson9/helm/releases/download/mautrix-discord-0.1.0/mautrix-discord-0.1.0.tgz
+    version: 0.1.0
   mautrix-whatsapp:
   - annotations:
       artifacthub.io/changes: |
@@ -956,6 +982,32 @@ entries:
     urls:
     - https://github.com/mjohnson9/helm/releases/download/mautrix-whatsapp-1.1.2/mautrix-whatsapp-1.1.2.tgz
     version: 1.1.2
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
+          description: Initial version
+    apiVersion: v2
+    appVersion: v0.7.0
+    created: "2022-10-10T17:24:54.425162904Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.4.2
+    description: A Matrix-WhatsApp puppeting bridge based on whatsmeow.
+    digest: 80cd01c309c5fa4fa0566cbdd799f5618211260b28e63a1b4346bb42250cd257
+    home: https://github.com/mjohnson9/helm/tree/main/charts/mautrix-whatsapp
+    icon: https://maunium.net/favicon.ico
+    keywords:
+    - mautrix-whatsapp
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - name: mjohnson9
+    name: mautrix-whatsapp
+    sources:
+    - https://github.com/mautrix/whatsapp
+    urls:
+    - https://github.com/mjohnson9/helm/releases/download/mautrix-whatsapp-0.7.0/mautrix-whatsapp-0.7.0.tgz
+    version: 0.7.0
   mx-puppet-discord:
   - annotations:
       artifacthub.io/changes: |
@@ -1391,4 +1443,4 @@ entries:
     urls:
     - https://github.com/mjohnson9/helm/releases/download/mx-puppet-discord-1.2.0/mx-puppet-discord-1.2.0.tgz
     version: 1.2.0
-generated: "2022-10-09T04:04:07.06356438Z"
+generated: "2022-10-10T17:24:54.425379603Z"
