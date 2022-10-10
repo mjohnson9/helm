@@ -1,6 +1,6 @@
 # mautrix-discord
 
-![Version: 22.10.08](https://img.shields.io/badge/Version-22.10.08-informational?style=flat-square) ![AppVersion: 6be531685f308f081675034904d89c9e920be996-amd64](https://img.shields.io/badge/AppVersion-6be531685f308f081675034904d89c9e920be996--amd64-informational?style=flat-square)
+![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![AppVersion: 6be531685f308f081675034904d89c9e920be996-amd64](https://img.shields.io/badge/AppVersion-6be531685f308f081675034904d89c9e920be996--amd64-informational?style=flat-square)
 
 A Matrix-Discord puppeting bridge based on discordgo.
 
@@ -22,7 +22,7 @@ Kubernetes: `>=1.16.0-0`
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://library-charts.k8s-at-home.com | common | 4.4.2 |
+| https://library-charts.k8s-at-home.com | common | 4.5.2 |
 
 ## Values
 

@@ -17,8 +17,7 @@
                 "^charts\\/mautrix-discord\\/Chart\\.yaml$"
             ],
             "matchStrings": [
-                "appVersion: '(?<currentValue>.*?)'\\s+",
-                "version: '(?<currentValue>.*?)'\\s+"
+                "appVersion: '(?<currentValue>.*?)'\\s+"
             ],
             "depNameTemplate": "dock.mau.dev/mautrix/discord",
             "datasourceTemplate": "docker"
@@ -29,8 +28,7 @@
                 "^charts\\/mautrix-whatsapp\\/Chart\\.yaml$"
             ],
             "matchStrings": [
-                "appVersion: '(?<currentValue>.*?)'\\s+",
-                "version: '(?<currentValue>.*?)'\\s+"
+                "appVersion: '(?<currentValue>.*?)'\\s+"
             ],
             "depNameTemplate": "dock.mau.dev/mautrix/whatsapp",
             "datasourceTemplate": "docker"
