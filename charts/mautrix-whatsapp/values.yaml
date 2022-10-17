@@ -193,6 +193,12 @@ config:
       # provisioning endpoint is used or when a message comes in from that
       # chat.
       max_initial_conversations: -1
+      # If this value is greater than 0, then if the conversation's last
+      # message was more than this number of hours ago, then the conversation
+      # will automatically be marked it as read.
+      # Conversations that have a last message that is less than this number
+      # of hours ago will have their unread status synced from WhatsApp.
+      unread_hours_threshold: 0
       # Settings for immediate backfills. These backfills should generally be
       # small and their main purpose is to populate each of the initial chats
       # (as configured by max_initial_conversations) with a few messages so
@@ -264,7 +270,7 @@ config:
     force_active_delivery_receipts: false
     # Servers to always allow double puppeting from
     double_puppet_server_map: {}
-    #     example.com: https://example.com
+    #   example.com: https://example.com
     # Allow using double puppeting from any server with a valid client .well-known file.
     double_puppet_allow_discovery: false
     # Shared secrets for https://github.com/devture/matrix-synapse-shared-secret-auth
@@ -272,10 +278,13 @@ config:
     # If set, double puppeting will be enabled automatically for local users
     # instead of users having to find an access token and run `login-matrix`
     # manually.
-    login_shared_secret_map: {}
-    #     example.com: foobar
+    login_shared_secret_map:
+    #   example.com: foobar
     # Should the bridge explicitly set the avatar and room name for private chat portal rooms?
+    # This is implicitly enabled in encrypted rooms.
     private_chat_portal_meta: false
+    # Should group members be synced in parallel? This makes member sync faster
+    parallel_member_sync: false
     # Should Matrix m.notice-type messages be bridged?
     bridge_notices: true
     # Set this to true to tell the bridge to re-send m.bridge events to all rooms on the next run.
@@ -328,6 +337,9 @@ config:
     # Send captions in the same message as images. This will send data compatible with both MSC2530 and MSC3552.
     # This is currently not supported in most clients.
     caption_in_message: false
+    # Should Matrix edits be bridged to WhatsApp edits?
+    # Official WhatsApp clients don't render edits yet, but once they do, the bridge should work with them right away.
+    send_whatsapp_edits: false
     # Maximum time for handling Matrix events. Duration strings formatted for https://pkg.go.dev/time#ParseDuration
     # Null means there's no enforced timeout.
     message_handling_timeout:
@@ -362,7 +374,6 @@ config:
       allow: false
       # Default to encryption, force-enable encryption in all portals the bridge creates
       # This will cause the bridge bot to be in private chats for the encryption to work properly.
-      # It is recommended to also set private_chat_portal_meta to true when using this.
       default: false
       # Whether to use MSC2409/MSC3202 instead of /sync long polling for receiving encryption-related data.
       appservice: false
@@ -423,11 +434,10 @@ config:
     #        * - All Matrix users
     #   domain - All users on that homeserver
     #     mxid - Specific user
-    permissions:
-      {}
-      #   "*": relay
-      #   "example.com": user
-      #   "@admin:example.com": admin
+    permissions: {}
+    #   "*": relay
+    #   "example.com": user
+    #   "@admin:example.com": admin
 
     # Settings for relay mode
     relay:
