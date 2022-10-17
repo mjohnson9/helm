@@ -1,6 +1,6 @@
 # mautrix-whatsapp
 
-![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![AppVersion: v0.7.0](https://img.shields.io/badge/AppVersion-v0.7.0-informational?style=flat-square)
+![Version: 0.1.1](https://img.shields.io/badge/Version-0.1.1-informational?style=flat-square) ![AppVersion: v0.7.1](https://img.shields.io/badge/AppVersion-v0.7.1-informational?style=flat-square)
 
 A Matrix-WhatsApp puppeting bridge based on whatsmeow.
 
@@ -97,8 +97,9 @@ Kubernetes: `>=1.16.0-0`
 | config.bridge.history_sync.media_requests.request_local_time | int | `120` |  |
 | config.bridge.history_sync.media_requests.request_method | string | `"immediate"` |  |
 | config.bridge.history_sync.request_full_sync | bool | `false` |  |
+| config.bridge.history_sync.unread_hours_threshold | int | `0` |  |
 | config.bridge.identity_change_notices | bool | `false` |  |
-| config.bridge.login_shared_secret_map | object | `{}` |  |
+| config.bridge.login_shared_secret_map | string | `nil` |  |
 | config.bridge.management_room_text.additional_help | string | `""` |  |
 | config.bridge.management_room_text.welcome | string | `"Hello, I'm a WhatsApp bridge bot."` |  |
 | config.bridge.management_room_text.welcome_connected | string | `"Use `help` for help."` |  |
@@ -109,6 +110,7 @@ Kubernetes: `>=1.16.0-0`
 | config.bridge.message_status_events | bool | `false` |  |
 | config.bridge.mute_bridging | bool | `false` |  |
 | config.bridge.mute_status_broadcast | bool | `true` |  |
+| config.bridge.parallel_member_sync | bool | `false` |  |
 | config.bridge.permissions | object | `{}` |  |
 | config.bridge.personal_filtering_spaces | bool | `false` |  |
 | config.bridge.pinned_tag | string | `nil` |  |
@@ -128,6 +130,7 @@ Kubernetes: `>=1.16.0-0`
 | config.bridge.relay.message_formats."m.video" | string | `"<b>{{ .Sender.Displayname }}</b> sent a video"` |  |
 | config.bridge.resend_bridge_info | bool | `false` |  |
 | config.bridge.send_presence_on_typing | bool | `false` |  |
+| config.bridge.send_whatsapp_edits | bool | `false` |  |
 | config.bridge.status_broadcast_tag | string | `"m.lowpriority"` |  |
 | config.bridge.sync_direct_chat_list | bool | `false` |  |
 | config.bridge.sync_manual_marked_unread | bool | `true` |  |
