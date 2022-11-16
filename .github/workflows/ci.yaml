@@ -21,9 +21,9 @@ jobs:
           fetch-depth: 0
 
       - name: Install Helm
-        uses: azure/setup-helm@b5b231a831f96336bbfeccc1329990f0005c5bb1 # tag=v3.3
+        uses: azure/setup-helm@f382f75448129b3be48f8121b9857be18d815a82 # v3.4
         with:
-          version: v3.10.1 # renovate: datasource=github-releases depName=helm packageName=helm/helm
+          version: v3.10.2 # renovate: datasource=github-releases depName=helm packageName=helm/helm
 
       - uses: actions/setup-python@13ae5bb136fac2878aff31522b9efb785519f984 # tag=v4.3.0
         with:
@@ -98,7 +98,7 @@ jobs:
         uses: helm/kind-action@9e8295d178de23cbfbd8fa16cf844eec1d773a07 # tag=v1.4.0
         with:
           node_image: kindest/node:${{ matrix.k8s }}
-          version: v0.16.0 # renovate: datasource=github-releases depName=kind packageName=kubernetes-sigs/kind
+          version: v0.17.0 # renovate: datasource=github-releases depName=kind packageName=kubernetes-sigs/kind
 
       - name: Install chart-testing
         uses: helm/chart-testing-action@afea100a513515fbd68b0e72a7bb0ae34cb62aec # tag=v2.3.1
