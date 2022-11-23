@@ -12,26 +12,15 @@
     ],
     "regexManagers": [
         {
-            "description": "Update mautrix-discord docker image references",
+            "description": "Update appVersion in Helm charts",
             "fileMatch": [
-                "^charts\\/mautrix-discord\\/Chart\\.yaml$"
+                "^charts/[^/]+/Chart\\.yaml$"
             ],
             "matchStrings": [
-                "appVersion: '(?<currentValue>.*?)'\\s+"
+                "# renovate: container=(?<depName>.+?)(?: (?:packageName|lookupName)=(?<packageName>.+?))?(?: versioning=(?<versioning>[a-z-]+?))?\\sappVersion: (?<currentValue>.+?)\\s"
             ],
-            "depNameTemplate": "dock.mau.dev/mautrix/discord",
             "datasourceTemplate": "docker"
-        },
-        {
-            "description": "Update mautrix-whatsapp docker image references",
-            "fileMatch": [
-                "^charts\\/mautrix-whatsapp\\/Chart\\.yaml$"
-            ],
-            "matchStrings": [
-                "appVersion: '(?<currentValue>.*?)'\\s+"
-            ],
-            "depNameTemplate": "dock.mau.dev/mautrix/whatsapp",
-            "datasourceTemplate": "docker"
+            "versioningTemplate": "{{#if versioning}}{{versioning}}{{else}}semver{{/if}}"
         },
         {
             "description": "Update _VERSION variables in shell scripts",
