@@ -8,7 +8,6 @@ kubeVersion: ">=1.16.0-0"
 keywords:
   - mautrix-discord
 home: https://github.com/mjohnson9/helm/tree/main/charts/mautrix-discord
-icon: https://maunium.net/favicon.ico
 sources:
   - https://github.com/mautrix/discord
 maintainers:
