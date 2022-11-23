@@ -11,7 +11,8 @@ home: https://github.com/mjohnson9/helm/tree/main/charts/mautrix-discord
 sources:
   - https://github.com/mautrix/discord
 maintainers:
-  - name: mjohnson9
+  - name: Mike Johnson
+    email: michael@johnson.gg
 dependencies:
   - name: common
     repository: https://library-charts.k8s-at-home.com
