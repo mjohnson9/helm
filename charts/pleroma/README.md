@@ -37,7 +37,6 @@ Kubernetes: `>=1.16.0-0`
 | image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
 | image.repository | string | `"registry.gitlab.com/tsuribori/docker-pleroma"` | image repository |
 | image.tag | string | `nil` |  |
-| initContainers.copy-configmap | object | See values.yaml | Configures an initContainer that copies the configmap to the AdGuardHome conf directory It does NOT overwrite when the file already exists. |
 | persistence | object | See values.yaml | Configure persistence settings for the chart under this key. |
 | postgresql | object | see bellow | Bitnami postgres chart. For more options see https://github.com/bitnami/charts/tree/master/bitnami/postgresql |
 | postgresql.auth.database | string | `"pleroma"` | Postgres database |

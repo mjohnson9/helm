@@ -4,7 +4,7 @@ apiVersion: v2
 appVersion: v2.4.3
 description: Free and open communication for everyone. Pleroma is social networking software compatible with other Fediverse software such as Misskey, Pixelfed, Mastodon and many others.
 name: pleroma
-version: 0.1.0
+version: 0.1.1
 kubeVersion: ">=1.16.0-0"
 keywords:
   - activitypub
