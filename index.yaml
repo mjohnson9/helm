@@ -7,6 +7,33 @@ entries:
           description: Initial version
     apiVersion: v2
     appVersion: 6be531685f308f081675034904d89c9e920be996-amd64
+    created: "2022-11-24T04:02:39.402546784Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.5.2
+    description: A Matrix-Discord puppeting bridge based on discordgo.
+    digest: 71fbec209f74d37b14842c4632cf2dbdd5df47cdbe4bafb01689035432d250b1
+    home: https://github.com/mjohnson9/helm/tree/main/charts/mautrix-discord
+    keywords:
+    - mautrix-discord
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - email: michael@johnson.gg
+      name: mjohnson9
+      url: https://johnson.gg
+    name: mautrix-discord
+    sources:
+    - https://github.com/mautrix/discord
+    urls:
+    - https://github.com/mjohnson9/helm/releases/download/mautrix-discord-0.2.1/mautrix-discord-0.2.1.tgz
+    version: 0.2.1
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
+          description: Initial version
+    apiVersion: v2
+    appVersion: 6be531685f308f081675034904d89c9e920be996-amd64
     created: "2022-11-24T04:00:48.681955545Z"
     dependencies:
     - name: common
@@ -55,6 +82,33 @@ entries:
     - https://github.com/mjohnson9/helm/releases/download/mautrix-discord-0.1.0/mautrix-discord-0.1.0.tgz
     version: 0.1.0
   mautrix-whatsapp:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
+          description: Initial version
+    apiVersion: v2
+    appVersion: v0.7.1
+    created: "2022-11-24T04:02:39.632949365Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.5.2
+    description: A Matrix-WhatsApp puppeting bridge based on whatsmeow.
+    digest: dbc39cd5db99d5dbe68ff757b650049e2c7536407bdb6b101019d36c18a1b44b
+    home: https://github.com/mjohnson9/helm/tree/main/charts/mautrix-whatsapp
+    keywords:
+    - mautrix-whatsapp
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - email: michael@johnson.gg
+      name: mjohnson9
+      url: https://johnson.gg
+    name: mautrix-whatsapp
+    sources:
+    - https://github.com/mautrix/whatsapp
+    urls:
+    - https://github.com/mjohnson9/helm/releases/download/mautrix-whatsapp-0.2.1/mautrix-whatsapp-0.2.1.tgz
+    version: 0.2.1
   - annotations:
       artifacthub.io/changes: |
         - kind: added
@@ -141,6 +195,42 @@ entries:
           description: Initial commit
     apiVersion: v2
     appVersion: v2.4.3
+    created: "2022-11-24T04:02:39.847383331Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.5.2
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.6.12
+    description: Free and open communication for everyone. Pleroma is social networking
+      software compatible with other Fediverse software such as Misskey, Pixelfed,
+      Mastodon and many others.
+    digest: 4c8bf49c7ea3a3a3244476358c185e9904dd3ddd20739cb5545a1dd5c6bf3537
+    home: https://github.com/mjohnson9/helm/tree/main/charts/pleroma
+    icon: https://pleroma.social/images/pleroma_logo_vector_nobg_nopan.svg
+    keywords:
+    - activitypub
+    - fediverse
+    - ostatus
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - email: michael@johnson.gg
+      name: mjohnson9
+      url: https://johnson.gg
+    name: pleroma
+    sources:
+    - https://git.pleroma.social/pleroma/pleroma
+    urls:
+    - https://github.com/mjohnson9/helm/releases/download/pleroma-0.1.2/pleroma-0.1.2.tgz
+    version: 0.1.2
+  - annotations:
+      artifacthub.io/changes: |-
+        - kind: added
+          description: Initial commit
+    apiVersion: v2
+    appVersion: v2.4.3
     created: "2022-11-24T04:00:48.955330285Z"
     dependencies:
     - name: common
@@ -171,4 +261,4 @@ entries:
     urls:
     - https://github.com/mjohnson9/helm/releases/download/pleroma-0.1.1/pleroma-0.1.1.tgz
     version: 0.1.1
-generated: "2022-11-24T04:00:48.955350786Z"
+generated: "2022-11-24T04:02:39.847408632Z"
