@@ -28,7 +28,9 @@ jobs:
           version: v3.10.2 # renovate: datasource=github-releases depName=helm packageName=helm/helm
 
       - name: Add external Helm repos
-        run: helm repo add library-charts https://library-charts.k8s-at-home.com
+        run: |
+          helm repo add library-charts https://library-charts.k8s-at-home.com
+          helm repo add bitnami https://charts.bitnami.com/bitnami
 
       - name: Build chart dependencies
         run: |
