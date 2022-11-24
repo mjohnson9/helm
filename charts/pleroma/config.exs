@@ -20,12 +20,12 @@ config :pleroma, :media_proxy,
 
 config :pleroma, Pleroma.Repo,
     adapter: Ecto.Adapters.Postgres,
-    hostname: System.get_env("PGHOST"),
-    port: System.get_env("PGPORT", "5432"),
-    ssl: System.get_env("PGSSLMODE", "prefer") != "disable",  # cast to bool
-    database: System.get_env("PGDATABASE"),
-    username: System.get_env("PGUSER"),
-    password: System.fetch_env!("PGPASSWORD"),
+    hostname: System.get_env("DB_HOST"),
+    port: System.get_env("DB_PORT", "5432"),
+    ssl: System.get_env("DB_SSL", "prefer") != "disable",  # cast to bool
+    database: System.get_env("DB_NAME"),
+    username: System.get_env("DB_USER"),
+    password: System.fetch_env!("DB_PASS"),
     pool_size: 10
 
 # Configure web push notifications
