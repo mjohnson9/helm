@@ -1,0 +1,110 @@
+#
+# IMPORTANT NOTE
+#
+# This chart inherits from our common library chart. You can check the default values/options here:
+# https://github.com/k8s-at-home/library-charts/tree/main/charts/stable/common/values.yaml
+#
+
+controller:
+  # -- Number of pods to load balance between
+  replicas: 1
+
+initContainers:
+# -- Configures an initContainer that copies the configmap to the AdGuardHome conf directory
+# It does NOT overwrite when the file already exists.
+# @default -- See values.yaml
+  copy-configmap:
+    image: busybox
+    imagePullPolicy: IfNotPresent
+    command:
+    - "sh"
+    - "-c"
+    - |
+      if [ ! -f /opt/adguardhome/conf/AdGuardHome.yaml ]; then
+        mkdir -p /opt/adguardhome/conf
+        cp /tmp/AdGuardHome.yaml /opt/adguardhome/conf/AdGuardHome.yaml
+      fi
+    volumeMounts:
+    - name: adguard-home-config
+      mountPath: /tmp/AdGuardHome.yaml
+      subPath: AdGuardHome.yaml
+    - name: config
+      mountPath: /opt/adguardhome/conf
+    securityContext:
+      runAsUser: 0
+
+image:
+  # -- image repository
+  repository: registry.gitlab.com/tsuribori/docker-pleroma
+  # @default -- chart.appVersion
+  tag:
+  # -- image pull policy
+  pullPolicy: IfNotPresent
+
+# -- environment variables.
+# @default -- See below
+env:
+  # -- Set the container timezone
+  TZ: UTC
+  DOMAIN: localhost
+  INSTANCE_NAME: Pleroma
+  # ADMIN_EMAIL: ""
+  # NOTIFY_EMAIL: ""
+  REGISTRATIONS_OPEN: "false"
+  FEDERATING: "true"
+  MEDIA_PROXY_ENABLED: "false"
+  # MEDIA_PROXY_BASE_URL: ""
+
+configmap:
+  config:
+    enabled: true
+    data:
+      config.exs: |
+        {{- .Files.Get "config.exs" | nindent 8 }}
+
+# -- Configures service settings for the chart.
+# @default -- See values.yaml
+service:
+  main:
+    primary: true
+    ports:
+      http:
+        port: 4000
+
+# -- Configure persistence settings for the chart under this key.
+# @default -- See values.yaml
+persistence:
+  config:
+    enabled: true
+    mountPath: /etc/pleroma/config.exs
+    subPath: config.exs
+    type: configMap
+    name: config
+  uploads:
+    enabled: false
+    mountPath: /var/lib/pleroma/uploads
+    size: 1Gi
+
+# -- Bitnami postgres chart. For more options see https://github.com/bitnami/charts/tree/master/bitnami/postgresql
+# @default -- see bellow
+postgresql:
+  # -- By default uses an internal postgress. Dissable if you use your own Postgres.
+  enabled: false
+  # for using an existing Postgres deployment
+  # host: ""
+  # port: 5432
+  auth:
+    # -- Postgres database
+    database: pleroma
+    # -- Postgres database user name
+    username: pleroma
+    # -- Postgres database password
+    password: "changeme"
+    existingSecret:
+      name: ""
+      usernameKey: username
+      passwordKey: password
+  persistence:
+    # -- if database is stored to a PVC. Set to true when you are done testing.
+    enabled: false
+    # storageClass: ""
