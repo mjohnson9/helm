@@ -19,7 +19,7 @@
             "matchStrings": [
                 "# renovate: container=(?<depName>.+?)(?: (?:packageName|lookupName)=(?<packageName>.+?))?(?: versioning=(?<versioning>[a-z-]+?))?\\sappVersion: (?<currentValue>.+?)\\s"
             ],
-            "datasourceTemplate": "docker"
+            "datasourceTemplate": "docker",
             "versioningTemplate": "{{#if versioning}}{{versioning}}{{else}}semver{{/if}}"
         },
         {
