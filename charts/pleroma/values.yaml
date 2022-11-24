@@ -58,7 +58,7 @@ persistence:
     enabled: true
     type: configMap
     name: pleroma-config
-    mountPath: /pleroma/config/prod.secret.exs
+    mountPath: /var/lib/pleroma/config.exs
     subPath: config.exs
   uploads:
     enabled: false

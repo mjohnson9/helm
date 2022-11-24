@@ -1,4 +1,4 @@
-import Mix.Config
+import Config
 
 config :pleroma, Pleroma.Web.Endpoint,
     url: [host: System.get_env("DOMAIN", "localhost"), scheme: "https", port: 443],
