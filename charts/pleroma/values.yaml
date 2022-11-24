@@ -22,6 +22,7 @@ image:
 env:
   # -- Set the container timezone
   TZ: UTC
+  HOME: /pleroma
   DOMAIN: localhost
   INSTANCE_NAME: Pleroma
   # ADMIN_EMAIL: ""
