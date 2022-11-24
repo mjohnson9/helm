@@ -15,8 +15,9 @@ icon: https://pleroma.social/images/pleroma_logo_vector_nobg_nopan.svg
 sources:
   - https://git.pleroma.social/pleroma/pleroma
 maintainers:
-  - name: Mike Johnson
+  - name: mjohnson9
     email: michael@johnson.gg
+    url: https://johnson.gg
 dependencies:
   - name: common
     repository: https://library-charts.k8s-at-home.com
