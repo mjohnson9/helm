@@ -11,7 +11,7 @@ controller:
 
 image:
   # -- image repository
-  repository: registry.gitlab.com/tsuribori/docker-pleroma
+  repository: ghcr.io/mjohnson9/docker-pleroma
   # @default -- chart.appVersion
   tag:
   # -- image pull policy
@@ -58,7 +58,7 @@ persistence:
     enabled: true
     type: configMap
     name: pleroma-config
-    mountPath: /etc/pleroma/config.exs
+    mountPath: /pleroma/config/prod.secret.exs
     subPath: config.exs
   uploads:
     enabled: false

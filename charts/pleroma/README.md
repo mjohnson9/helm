@@ -1,6 +1,6 @@
 # pleroma
 
-![Version: 0.1.7](https://img.shields.io/badge/Version-0.1.7-informational?style=flat-square) ![AppVersion: v2.4.3](https://img.shields.io/badge/AppVersion-v2.4.3-informational?style=flat-square)
+![Version: 0.1.8](https://img.shields.io/badge/Version-0.1.8-informational?style=flat-square) ![AppVersion: v0.1.4](https://img.shields.io/badge/AppVersion-v0.1.4-informational?style=flat-square)
 
 Free and open communication for everyone. Pleroma is social networking software compatible with other Fediverse software such as Misskey, Pixelfed, Mastodon and many others.
 
@@ -36,7 +36,7 @@ Kubernetes: `>=1.16.0-0`
 | env | object | See below | environment variables. |
 | env.TZ | string | `"UTC"` | Set the container timezone |
 | image.pullPolicy | string | `"IfNotPresent"` | image pull policy |
-| image.repository | string | `"registry.gitlab.com/tsuribori/docker-pleroma"` | image repository |
+| image.repository | string | `"ghcr.io/mjohnson9/docker-pleroma"` | image repository |
 | image.tag | string | `nil` |  |
 | persistence | object | See values.yaml | Configure persistence settings for the chart under this key. |
 | postgresql | object | see bellow | Bitnami postgres chart. For more options see https://github.com/bitnami/charts/tree/master/bitnami/postgresql |
