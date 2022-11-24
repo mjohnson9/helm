@@ -1,7 +1,7 @@
 ---
 apiVersion: v2
 # renovate: container=registry.gitlab.com/tsuribori/docker-pleroma
-appVersion: v2.4.3
+appVersion: v2.4.4
 description: Free and open communication for everyone. Pleroma is social networking software compatible with other Fediverse software such as Misskey, Pixelfed, Mastodon and many others.
 name: pleroma
 version: 0.1.7
