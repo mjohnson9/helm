@@ -195,6 +195,42 @@ entries:
           description: Initial commit
     apiVersion: v2
     appVersion: v0.1.4
+    created: "2022-11-24T06:27:47.912300457Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.5.2
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.6.12
+    description: Free and open communication for everyone. Pleroma is social networking
+      software compatible with other Fediverse software such as Misskey, Pixelfed,
+      Mastodon and many others.
+    digest: 69c1550a83772bfe8aac5f1941c06e52828ea9c6120a6e8fe997398750c53711
+    home: https://github.com/mjohnson9/helm/tree/main/charts/pleroma
+    icon: https://pleroma.social/images/pleroma_logo_vector_nobg_nopan.svg
+    keywords:
+    - activitypub
+    - fediverse
+    - ostatus
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - email: michael@johnson.gg
+      name: mjohnson9
+      url: https://johnson.gg
+    name: pleroma
+    sources:
+    - https://git.pleroma.social/pleroma/pleroma
+    urls:
+    - https://github.com/mjohnson9/helm/releases/download/pleroma-0.1.9/pleroma-0.1.9.tgz
+    version: 0.1.9
+  - annotations:
+      artifacthub.io/changes: |-
+        - kind: added
+          description: Initial commit
+    apiVersion: v2
+    appVersion: v0.1.4
     created: "2022-11-24T06:06:01.881828228Z"
     dependencies:
     - name: common
@@ -477,4 +513,4 @@ entries:
     urls:
     - https://github.com/mjohnson9/helm/releases/download/pleroma-0.1.1/pleroma-0.1.1.tgz
     version: 0.1.1
-generated: "2022-11-24T06:06:01.882000134Z"
+generated: "2022-11-24T06:27:47.912358658Z"
