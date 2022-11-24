@@ -7,6 +7,33 @@ entries:
           description: Initial version
     apiVersion: v2
     appVersion: 6be531685f308f081675034904d89c9e920be996-amd64
+    created: "2022-11-24T04:00:48.681955545Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.5.2
+    description: A Matrix-Discord puppeting bridge based on discordgo.
+    digest: 26ccf50485c73a821255c29bb01e0e8dbc76fc9dd39f81334a530122baba733a
+    home: https://github.com/mjohnson9/helm/tree/main/charts/mautrix-discord
+    keywords:
+    - mautrix-discord
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - email: michael@johnson.gg
+      name: mjohnson9
+      url: https://johnson.gg
+    name: mautrix-discord
+    sources:
+    - https://github.com/mautrix/discord
+    urls:
+    - https://github.com/mjohnson9/helm/releases/download/mautrix-discord-0.2.0/mautrix-discord-0.2.0.tgz
+    version: 0.2.0
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
+          description: Initial version
+    apiVersion: v2
+    appVersion: 6be531685f308f081675034904d89c9e920be996-amd64
     created: "2022-10-10T14:04:47.531237598-04:00"
     dependencies:
     - name: common
@@ -28,6 +55,33 @@ entries:
     - https://github.com/mjohnson9/helm/releases/download/mautrix-discord-0.1.0/mautrix-discord-0.1.0.tgz
     version: 0.1.0
   mautrix-whatsapp:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
+          description: Initial version
+    apiVersion: v2
+    appVersion: v0.7.1
+    created: "2022-11-24T04:00:48.804126988Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.5.2
+    description: A Matrix-WhatsApp puppeting bridge based on whatsmeow.
+    digest: fad00f79c253c2f229983e0bad48722d8123db32c35f95c3a6c1b432abc09e83
+    home: https://github.com/mjohnson9/helm/tree/main/charts/mautrix-whatsapp
+    keywords:
+    - mautrix-whatsapp
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - email: michael@johnson.gg
+      name: mjohnson9
+      url: https://johnson.gg
+    name: mautrix-whatsapp
+    sources:
+    - https://github.com/mautrix/whatsapp
+    urls:
+    - https://github.com/mjohnson9/helm/releases/download/mautrix-whatsapp-0.2.0/mautrix-whatsapp-0.2.0.tgz
+    version: 0.2.0
   - annotations:
       artifacthub.io/changes: |
         - kind: added
@@ -80,4 +134,41 @@ entries:
     urls:
     - https://github.com/mjohnson9/helm/releases/download/mautrix-whatsapp-0.1.0/mautrix-whatsapp-0.1.0.tgz
     version: 0.1.0
-generated: "2022-10-17T15:22:47.856402943Z"
+  pleroma:
+  - annotations:
+      artifacthub.io/changes: |-
+        - kind: added
+          description: Initial commit
+    apiVersion: v2
+    appVersion: v2.4.3
+    created: "2022-11-24T04:00:48.955330285Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.5.2
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.6.12
+    description: Free and open communication for everyone. Pleroma is social networking
+      software compatible with other Fediverse software such as Misskey, Pixelfed,
+      Mastodon and many others.
+    digest: ff36480b1fceff1ba0ea6b83b419ce5d5996a95192e61304530b7b154a8ebe98
+    home: https://github.com/mjohnson9/helm/tree/main/charts/pleroma
+    icon: https://pleroma.social/images/pleroma_logo_vector_nobg_nopan.svg
+    keywords:
+    - activitypub
+    - fediverse
+    - ostatus
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - email: michael@johnson.gg
+      name: mjohnson9
+      url: https://johnson.gg
+    name: pleroma
+    sources:
+    - https://git.pleroma.social/pleroma/pleroma
+    urls:
+    - https://github.com/mjohnson9/helm/releases/download/pleroma-0.1.1/pleroma-0.1.1.tgz
+    version: 0.1.1
+generated: "2022-11-24T04:00:48.955350786Z"
