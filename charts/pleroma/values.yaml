@@ -36,7 +36,10 @@ configmap:
     enabled: true
     data:
       config.exs: |
-        {{- .Files.Get "config.exs" | nindent 8 }}
+        {{- .Files.Get "config.exs" | nindent 2 }}
+
+# -- addConfig will be appended to the end of config.exs.
+addConfig: ""
 
 # -- Configures service settings for the chart.
 # @default -- See values.yaml

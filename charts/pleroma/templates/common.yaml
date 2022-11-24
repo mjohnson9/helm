@@ -23,5 +23,8 @@ PGPASSWORD: {{ .Values.postgresql.auth.password | quote }}
 {{- end -}}
 {{- $_ := set .Values "env" (merge  (include "pleroma.hardcoded-env" . | fromYaml) .Values.env) -}}
 
+{{/* Append .Values.addConfig to the configmap */}}
+{{- $_ := set .Values.configmap.config.data "config.exs" (printf "%s\n%s" (index .Values.configmap.config.data "config.exs") .Values.addConfig) -}}
+
 {{/* Render the templates */}}
 {{ include "common.all" . }}

@@ -1,6 +1,6 @@
 # pleroma
 
-![Version: 0.1.3](https://img.shields.io/badge/Version-0.1.3-informational?style=flat-square) ![AppVersion: v2.4.3](https://img.shields.io/badge/AppVersion-v2.4.3-informational?style=flat-square)
+![Version: 0.1.4](https://img.shields.io/badge/Version-0.1.4-informational?style=flat-square) ![AppVersion: v2.4.3](https://img.shields.io/badge/AppVersion-v2.4.3-informational?style=flat-square)
 
 Free and open communication for everyone. Pleroma is social networking software compatible with other Fediverse software such as Misskey, Pixelfed, Mastodon and many others.
 
@@ -29,7 +29,8 @@ Kubernetes: `>=1.16.0-0`
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| configmap.config.data."config.exs" | string | `"{{- .Files.Get \"config.exs\" | nindent 8 }}\n"` |  |
+| addConfig | string | `""` | addConfig will be appended to the end of config.exs. |
+| configmap.config.data."config.exs" | string | `"{{- .Files.Get \"config.exs\" | nindent 2 }}\n"` |  |
 | configmap.config.enabled | bool | `true` |  |
 | controller.replicas | int | `1` | Number of pods to load balance between |
 | env | object | See below | environment variables. |
