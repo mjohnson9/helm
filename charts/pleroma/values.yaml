@@ -52,10 +52,10 @@ service:
 persistence:
   config:
     enabled: true
+    type: configMap
+    name: pleroma-config
     mountPath: /etc/pleroma/config.exs
     subPath: config.exs
-    type: configMap
-    name: config
   uploads:
     enabled: false
     mountPath: /var/lib/pleroma/uploads
