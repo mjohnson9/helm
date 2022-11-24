@@ -1,0 +1,27 @@
+{{/* Make sure all variables are set properly */}}
+{{- include "common.values.setup" . }}
+
+{{- define "pleroma.hardcoded-env" -}}
+PGHOST: {{ .Values.postgresql.host | default (printf "%s-postgresql" .Release.Name) }}
+PGPORT: {{ .Values.postgresql.port | default "5432" | quote }}
+PGDATABASE: {{ .Values.postgresql.auth.database }}
+{{ if .Values.postgresql.auth.existingSecret.name | len -}}
+PGUSER:
+  valueFrom:
+    secretKeyRef:
+      name: {{ .Values.postgresql.auth.existingSecret.name }}
+      key: {{ .Values.postgresql.auth.existingSecret.usernameKey }}
+PGPASSWORD:
+  valueFrom:
+    secretKeyRef:
+      name: {{ .Values.postgresql.auth.existingSecret.name }}
+      key: {{ .Values.postgresql.auth.existingSecret.passwordKey }}
+{{- else -}}
+PGUSER: {{ .Values.postgresql.auth.username }}
+PGPASSWORD: {{ .Values.postgresql.auth.password | quote }}
+{{- end -}}
+{{- end -}}
+{{- $_ := set .Values "env" (merge  (include "pleroma.hardcoded-env" . | fromYaml) .Values.env) -}}
+
+{{/* Render the templates */}}
+{{ include "common.all" . }}
