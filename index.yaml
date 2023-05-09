@@ -87,6 +87,33 @@ entries:
         - kind: added
           description: Initial version
     apiVersion: v2
+    appVersion: v0.8.4
+    created: "2023-05-09T23:23:56.887793744Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.5.2
+    description: A Matrix-WhatsApp puppeting bridge based on whatsmeow.
+    digest: 9118de766d4413255edad69cced0b075c1c399c5f2df934ce9a026d09d617ffe
+    home: https://github.com/mjohnson9/helm/tree/main/charts/mautrix-whatsapp
+    keywords:
+    - mautrix-whatsapp
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - email: michael@johnson.gg
+      name: mjohnson9
+      url: https://johnson.gg
+    name: mautrix-whatsapp
+    sources:
+    - https://github.com/mautrix/whatsapp
+    urls:
+    - https://github.com/mjohnson9/helm/releases/download/mautrix-whatsapp-0.2.2/mautrix-whatsapp-0.2.2.tgz
+    version: 0.2.2
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
+          description: Initial version
+    apiVersion: v2
     appVersion: v0.7.1
     created: "2022-11-24T04:02:39.632949365Z"
     dependencies:
@@ -520,6 +547,37 @@ entries:
           description: Upgraded `common` chart dependency to version 4.5.2
     apiVersion: v2
     appVersion: 10.0.1
+    created: "2023-05-09T23:23:57.104089346Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.5.2
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.5.7
+    description: seafile helm package
+    digest: 407fd5eec44be256e99bac12d8e46f4e8404ba2bf966b88a60cc95040620babe
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/stable/seafile
+    icon: https://manual.seafile.com/media/seafile-transparent-1024.png
+    keywords:
+    - seafile
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - email: 1985132+phybros@users.noreply.github.com
+      name: phybros
+    name: seafile
+    sources:
+    - https://github.com/haiwen/seafile-docker
+    urls:
+    - https://github.com/mjohnson9/helm/releases/download/seafile-3.1.4/seafile-3.1.4.tgz
+    version: 3.1.4
+  - annotations:
+      artifacthub.io/changes: |-
+        - kind: changed
+          description: Upgraded `common` chart dependency to version 4.5.2
+    apiVersion: v2
+    appVersion: 10.0.1
     created: "2023-05-09T23:16:44.987285547Z"
     dependencies:
     - name: common
@@ -545,4 +603,4 @@ entries:
     urls:
     - https://github.com/mjohnson9/helm/releases/download/seafile-3.1.2/seafile-3.1.2.tgz
     version: 3.1.2
-generated: "2023-05-09T23:16:44.987311647Z"
+generated: "2023-05-09T23:23:57.104916147Z"
