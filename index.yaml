@@ -513,4 +513,36 @@ entries:
     urls:
     - https://github.com/mjohnson9/helm/releases/download/pleroma-0.1.1/pleroma-0.1.1.tgz
     version: 0.1.1
-generated: "2022-11-24T06:27:47.912358658Z"
+  seafile:
+  - annotations:
+      artifacthub.io/changes: |-
+        - kind: changed
+          description: Upgraded `common` chart dependency to version 4.5.2
+    apiVersion: v2
+    appVersion: 10.0.1
+    created: "2023-05-09T23:16:44.987285547Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.5.2
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.0.14
+    description: seafile helm package
+    digest: 5c77fcb021cdd1effb5b94ce9da0dfb87a370fcdb84c2a56c6f27bbf6b538fb2
+    home: https://github.com/k8s-at-home/charts/tree/master/charts/stable/seafile
+    icon: https://manual.seafile.com/media/seafile-transparent-1024.png
+    keywords:
+    - seafile
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - email: 1985132+phybros@users.noreply.github.com
+      name: phybros
+    name: seafile
+    sources:
+    - https://github.com/haiwen/seafile-docker
+    urls:
+    - https://github.com/mjohnson9/helm/releases/download/seafile-3.1.2/seafile-3.1.2.tgz
+    version: 3.1.2
+generated: "2023-05-09T23:16:44.987311647Z"
