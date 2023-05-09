@@ -3,7 +3,7 @@ description: A Matrix-WhatsApp puppeting bridge based on whatsmeow.
 name: mautrix-whatsapp
 version: 0.2.1
 # renovate: container=dock.mau.dev/mautrix/whatsapp
-appVersion: v0.7.1
+appVersion: v0.8.4
 kubeVersion: ">=1.16.0-0"
 keywords:
   - mautrix-whatsapp
