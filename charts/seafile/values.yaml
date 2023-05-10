@@ -60,6 +60,13 @@ mariadb:
       enabled: false
       # storageClass: ""
 
+# -- Enable and configure memcached subchart under this key.
+#    For more options see [memcached chart documentation](https://github.com/bitnami/charts/tree/master/bitnami/memcached)
+# @default -- See values.yaml
+memcached:
+  enabled: false
+  
+
 # -- Configure persistence settings for the chart under this key. Note that `shared` is a reserved keyword in the common-chart, make sure you use a diffrent key for persistance.
 # @default -- See values.yaml
 persistence:
